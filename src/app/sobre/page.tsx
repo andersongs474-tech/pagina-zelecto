@@ -2,6 +2,7 @@
 import TeamMemberCard from "@/components/ui/teamMemberCard";
 import Icon from "@/components/ui/icon";
 import FinalCTA from "@/components/sections/finalCTA";
+import { IconProps } from "@/components/ui/icon"; 
 
 const teamMembers = [
   { name: "Juan Pérez", role: "CEO & Estratega", imageUrl: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=400", linkedinUrl: "#" },
@@ -9,7 +10,15 @@ const teamMembers = [
   { name: "Carlos Ruiz", role: "Líder de Contenido", imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400", linkedinUrl: "#" },
 ];
 
-const pillars = [
+
+type Pillar = {
+  name: string;
+  description: string;
+  icon: IconProps['name']; 
+};
+
+
+const pillars: Pillar[] = [
     { name: "Datos > Opiniones", description: "Cada decisión estratégica está respaldada por datos, no por intuición.", icon: "Database" },
     { name: "Obsesión por el Cliente", description: "Entendemos tus KPIs y los tratamos como si fueran nuestros.", icon: "Target" },
     { name: "Iteración Constante", description: "Nunca nos conformamos. Siempre estamos testeando para mejorar.", icon: "Repeat" },
@@ -32,7 +41,8 @@ export default function SobrePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {pillars.map(p => (
               <div key={p.name} className="text-center p-6">
-                <Icon name={p.icon as any} className="mx-auto text-blue-500 mb-4" size={40}/>
+                {/* 4. Eliminamos el "as any", ¡ya no es necesario! */}
+                <Icon name={p.icon} className="mx-auto text-blue-500 mb-4" size={40}/>
                 <h3 className="font-bold text-xl mb-2">{p.name}</h3>
                 <p className="text-slate-600">{p.description}</p>
               </div>

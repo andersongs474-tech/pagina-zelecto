@@ -1,8 +1,16 @@
 // src/app/garantias/page.tsx
 import Icon from "@/components/ui/icon";
 import Link from "next/link";
+import { IconProps } from "@/components/ui/icon";
 
-const guarantees = [
+
+type Guarantee = {
+  title: string;
+  description: string;
+  icon: IconProps['name']; 
+};
+
+const guarantees: Guarantee[] = [
   { icon: "ClipboardCheck", title: "Alcance Definido", description: "Todos los entregables, plazos y KPIs se definen por escrito antes de empezar cada sprint mensual." },
   { icon: "Clock", title: "Tiempos de Entrega", description: "Nos comprometemos a cumplir los plazos de entrega de creativos y reportes establecidos." },
   { icon: "Camera", title: "Re-shoots de UGC", description: "Si un vídeo UGC tiene fallos técnicos o no sigue el guion, lo rehacemos sin coste adicional." },
@@ -10,6 +18,7 @@ const guarantees = [
   { icon: "FileText", title: "Reporting Transparente", description: "Recibirás informes claros y accionables que explican el qué, el porqué y el cómo de tus resultados." },
   { icon: "LogOut", title: "Salida Sin Penalidad", description: "Puedes pausar o finalizar nuestra colaboración al final de cualquier ciclo mensual, sin preguntas ni penalizaciones." },
 ];
+
 
 export default function GarantiasPage() {
   return (
@@ -26,7 +35,7 @@ export default function GarantiasPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {guarantees.map((g) => (
               <div key={g.title} className="bg-white p-6 rounded-lg border">
-                <Icon name={g.icon as any} className="text-blue-500 mb-4" size={32} />
+                <Icon name={g.icon} className="text-blue-500 mb-4" size={32} />
                 <h3 className="font-bold text-lg mb-2">{g.title}</h3>
                 <p className="text-slate-600 text-sm">{g.description}</p>
               </div>
