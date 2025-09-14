@@ -30,7 +30,7 @@ export default function EcosistemaPage() {
         imagePosition="right"
       >
         <p>
-          Antes de proponer cualquier solución, realizamos una inmersión profunda en tu negocio. No creemos en las "tallas únicas".
+          Antes de proponer cualquier solución, realizamos una inmersión profunda en tu negocio. No creemos en las &quot;tallas únicas&quot;.
         </p>
         <ul>
           <li><strong>Auditoría de Funnel:</strong> Analizamos cada etapa de tu embudo de conversión para identificar fugas y oportunidades.</li>
