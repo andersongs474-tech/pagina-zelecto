@@ -9,7 +9,7 @@ export type PostMetadata = {
   title: string;
   date: string;
   summary: string;
-  [key: string]: any; // Permite otras propiedades en el frontmatter
+  [key: string]: string; // Permite otras propiedades en el frontmatter
 };
 
 export type Post = {
