@@ -1,10 +1,11 @@
 // src/app/recursos/blog/page.tsx
-import fs from 'fs';
-import path from 'path';
+
+// Paso 1: Importaciones actualizadas
 import Link from 'next/link';
 import { compareDesc } from 'date-fns';
-import { serialize } from 'next-mdx-remote/serialize';
+import { getAllFilesMetadata } from '../../lib/mdx'; // Asegúrate que la ruta sea correcta
 
+// Estos types son útiles para definir la estructura de tus posts
 type PostMetadata = {
   title: string;
   date: string;
@@ -15,30 +16,17 @@ type Post = {
   slug: string;
 } & PostMetadata;
 
-async function getAllPosts(): Promise<Post[]> {
-  const postsDirectory = path.join(process.cwd(), 'src/content/blog');
-  const filenames = fs.readdirSync(postsDirectory);
 
-  const posts = await Promise.all(
-    filenames.map(async (filename) => {
-      const slug = filename.replace('.mdx', '');
-      const filePath = path.join(postsDirectory, filename);
-      const fileContent = fs.readFileSync(filePath, 'utf8');
-      const mdxSource = await serialize(fileContent, { parseFrontmatter: true });
-      const { frontmatter } = mdxSource;
+// Paso 2: La función local `getAllPosts` ha sido eliminada.
 
-      return {
-        slug,
-        ...frontmatter,
-      } as Post;
-    })
-  );
-
-  return posts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
-}
 
 export default async function BlogIndexPage() {
-  const posts = await getAllPosts();
+  // Paso 3: Usar la nueva función y ordenar los resultados
+  const allPosts: Post[] = getAllFilesMetadata();
+  // La función getAllFilesMetadata no ordena los posts, así que lo hacemos aquí.
+  const posts = allPosts.sort((a, b) => 
+    compareDesc(new Date(a.date), new Date(b.date))
+  );
 
   return (
     <main>
