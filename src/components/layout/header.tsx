@@ -18,7 +18,27 @@ const navLinks = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Si el scroll vertical es mayor a 10px, activamos el estado
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    // Añadimos el listener cuando el componente se monta
+    window.addEventListener('scroll', handleScroll);
+
+    // Limpiamos el listener cuando el componente se desmonta
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   // Efecto para cerrar el menú si el usuario cambia de página
   useEffect(() => {
@@ -46,10 +66,27 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      {/* <header 
+        className='fixed top-0 z-50 w-full transition-all duration-300 
+        shadow-xl backdrop-blur-none'
+      >  */}
+      <header 
+        className={`absolute top-0 z-50 w-full transition-all duration-300 ${
+          isScrolled
+          ?'bg:white'
+          :'shadow-xl backdrop-blur-none'
+        }`}
+      >
+        {/* <header 
+        className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+          isScrolled 
+            ? 'shadow-xl backdrop-blur-none' 
+            : 'bg-white'
+        }`} 
+      >*/}
         <div className="container flex h-16 max-w-7xl items-center justify-between mx-auto px-4">
           {/* Logo */}
-          <Link href="/" className="font-bold text-xl mr-4">
+          <Link href="/" className="text-white font-bold text-xl mr-4">
             Ecosistema Modular
           </Link>
 
@@ -59,7 +96,7 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`transition-colors hover:text-foreground/80 ${pathname === link.href ? 'text-foreground font-semibold' : 'text-foreground/60'}`}
+                className={`transition-colors hover:font-bold ${pathname === link.href ? 'text-verde font-semibold' : 'text-white'}`}
               >
                 {link.name}
               </Link>

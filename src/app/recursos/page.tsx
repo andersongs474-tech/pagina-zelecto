@@ -42,10 +42,10 @@ export default async function BlogIndexPage() {
 
   return (
     <main>
-      <section className="bg-slate-50 text-center py-20">
+      <section className="bg-negro text-center py-20">
         <div className="container max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl font-bold tracking-tighter">Blog de Marketing de Performance</h1>
-          <p className="mt-4 text-xl text-slate-600">Ideas, estrategias y tácticas para hacer crecer tu negocio.</p>
+          <h1 className="text-white text-5xl font-bold tracking-tighter">Blog de Marketing de Performance</h1>
+          <p className="mt-4 text-xl text-white/80">Ideas, estrategias y tácticas para hacer crecer tu negocio.</p>
         </div>
       </section>
 

@@ -27,10 +27,10 @@ export default function CasosPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-slate-50 text-center py-20">
+      <section className="bg-negro text-center py-20">
         <div className="container max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter">Resultados, no promesas</h1>
-          <p className="mt-4 text-xl text-slate-600">Explora cómo nuestro ecosistema ha ayudado a marcas como la tuya a escalar sus resultados.</p>
+          <h1 className="text-white text-5xl md:text-7xl font-bold tracking-tighter">Resultados, no promesas</h1>
+          <p className="mt-4 text-xl text-white/80">Explora cómo nuestro ecosistema ha ayudado a marcas como la tuya a escalar sus resultados.</p>
         </div>
       </section>
 

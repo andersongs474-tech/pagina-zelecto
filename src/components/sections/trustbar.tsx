@@ -17,7 +17,7 @@ const LogoPlaceholder = ({ name }: { name: string }) => (
 
 export default function TrustBar() {
   return (
-    <section className="bg-slate-50 py-12">
+    <section className="bg-slate-100 py-12">
       <div className="container max-w-7xl mx-auto px-4">
         <h3 className="text-center text-sm font-semibold text-slate-600 tracking-wider mb-8">
           CONFIAN EN NUESTRO ECOSISTEMA

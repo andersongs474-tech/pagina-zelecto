@@ -12,11 +12,11 @@ interface ButtonProps {
 }
 
 export default function Button({ href, children, variant = 'primary', className = '' }: ButtonProps) {
-  const baseStyles = 'px-6 py-3 font-semibold rounded-lg transition-transform duration-200 ease-in-out hover:scale-105';
+  const baseStyles = 'px-4 py-2 font-semibold rounded-lg transition-transform duration-200 ease-in-out hover:scale-105';
   
   const variantStyles = {
-    primary: 'bg-blue-600 text-white hover:bg-blue-700',
-    secondary: 'bg-transparent text-slate-900 border border-slate-300 hover:bg-slate-50',
+    primary: 'bg-transparent text-verde ring-4 ring-verde hover:bg-verde hover:text-white',
+    secondary: 'bg-transparent text-verde border border-slate-300 hover:bg-slate-50',
   };
 
   return (

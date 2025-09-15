@@ -28,7 +28,7 @@ export default function SobrePage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-slate-800 text-white text-center py-20 md:py-28">
+      <section className="bg-negro text-white text-center py-20 md:py-28">
         <div className="container max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tighter">Creatividad que vende, datos que lo comprueban.</h1>
           <p className="mt-6 text-xl text-slate-300">Somos un equipo de marketers, creativos y analistas unidos por una misión: construir ecosistemas de marketing que generen un crecimiento real y medible para nuestros clientes.</p>

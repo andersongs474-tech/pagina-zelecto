@@ -8,10 +8,10 @@ export default function ContactoPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-slate-50 py-20">
+      <section className="bg-negro py-20">
         <div className="container max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold tracking-tighter">Hablemos</h1>
-          <p className="mt-4 text-xl text-slate-600">Completa el formulario o agenda directamente una llamada. Estamos listos para escuchar tu reto.</p>
+          <h1 className="text-white text-5xl font-bold tracking-tighter">Hablemos</h1>
+          <p className="mt-4 text-xl text-white/80">Completa el formulario o agenda directamente una llamada. Estamos listos para escuchar tu reto.</p>
         </div>
       </section>
 
@@ -58,9 +58,9 @@ export default function ContactoPage() {
             </div>
             
             {/* Columna Derecha: Calendly y contacto directo */}
-            <div className="bg-slate-50 p-8 rounded-lg">
-              <h2 className="text-3xl font-bold mb-6">O agenda directamente</h2>
-              <p className="text-slate-600 mb-6">Elige un hueco en nuestro calendario y tengamos una llamada de 30 minutos para analizar tu caso. Sin compromiso.</p>
+            <div className="bg-negro p-8 rounded-lg">
+              <h2 className="text-white text-3xl font-bold mb-6">O agenda directamente</h2>
+              <p className="text-white/80 mb-6">Elige un hueco en nuestro calendario y tengamos una llamada de 30 minutos para analizar tu caso. Sin compromiso.</p>
               
               {/* Placeholder para el embed de Calendly */}
               <div className="bg-slate-200 rounded-md h-80 flex items-center justify-center text-slate-500 mb-6">

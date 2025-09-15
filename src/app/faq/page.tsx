@@ -12,10 +12,10 @@ const faqData = [
 export default function FaqPage() {
   return (
     <main>
-       <section className="bg-slate-50 text-center py-20">
+       <section className="bg-negro text-center py-20">
         <div className="container max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl font-bold tracking-tighter">Preguntas Frecuentes</h1>
-          <p className="mt-4 text-xl text-slate-600">Respuestas claras a tus dudas más comunes.</p>
+          <h1 className="text-white text-5xl font-bold tracking-tighter">Preguntas Frecuentes</h1>
+          <p className="mt-4 text-xl text-white/80">Respuestas claras a tus dudas más comunes.</p>
         </div>
       </section>
 

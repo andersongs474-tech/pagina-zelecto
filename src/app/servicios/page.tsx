@@ -59,12 +59,12 @@ export default function ServiciosHubPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-slate-50 text-center py-20 md:py-28">
+      <section className="bg-negro text-center py-20 md:py-28">
         <div className="container max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
+          <h1 className="text-white text-5xl md:text-7xl font-bold tracking-tighter mb-4">
             Módulos que se activan por impacto
           </h1>
-          <p className="text-xl text-slate-600 mb-8">
+          <p className="text-xl text-white/80 mb-8">
             Cada servicio es una pieza de nuestro ecosistema. Activamos solo lo que necesitas, cuando lo necesitas, para mover tus métricas clave.
           </p>
         </div>

@@ -7,12 +7,12 @@ export default function EcosistemaPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-slate-50 text-center py-20 md:py-28">
+      <section className="bg-negro text-center py-20 md:py-28">
         <div className="container max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
+          <h1 className="text-white text-5xl md:text-7xl font-bold tracking-tighter mb-4">
             Un sistema, no servicios sueltos
           </h1>
-          <p className="text-xl text-slate-600 mb-8">
+          <p className="text-xl text-white/80 mb-8">
             Nuestro framework de cuatro pasos, iterable y medible, está diseñado para generar crecimiento sostenible.
           </p>
           <Button href="/contacto" variant="primary">
@@ -94,10 +94,10 @@ export default function EcosistemaPage() {
       </MethodStep>
 
       {/* Evidencia Section */}
-      <section className="bg-slate-50 py-20 md:py-28">
+      <section className="bg-negro py-20 md:py-28">
         <div className="container max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">La evidencia de nuestro sistema</h2>
-            <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+            <h2 className="text-white text-3xl md:text-4xl font-bold tracking-tighter">La evidencia de nuestro sistema</h2>
+            <p className="mt-4 text-lg text-white/80 max-w-2xl mx-auto">
               Este ciclo de mejora continua se refleja directamente en tus métricas. Sprint tras sprint, verás cómo el CTR, CVR y ROAS mejoran de forma consistente.
             </p>
             <div className="mt-8 bg-white p-6 rounded-lg shadow-lg border">
