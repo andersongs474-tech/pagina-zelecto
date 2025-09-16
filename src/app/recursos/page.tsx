@@ -1,32 +1,17 @@
 // src/app/recursos/blog/page.tsx
 
-// Paso 1: Importaciones actualizadas
 import Link from 'next/link';
-import { compareDesc } from 'date-fns';
-import { getAllFilesMetadata } from '../../lib/mdx'; // Asegúrate que la ruta sea correcta
+// Ya no necesitas `compareDesc`, la nueva función ya ordena los posts.
+import { getAllPostsMetadata } from '@/lib/mdx'; // Usando el alias de ruta
 
-// Estos types son útiles para definir la estructura de tus posts
-type PostMetadata = {
-  title: string;
-  date: string;
-  summary: string;
-};
-
-type Post = {
-  slug: string;
-} & PostMetadata;
-
-
-// Paso 2: La función local `getAllPosts` ha sido eliminada.
-
-
+// El componente ahora debe ser 'async' porque la función que llama lo es
 export default async function BlogIndexPage() {
-  // Paso 3: Usar la nueva función y ordenar los resultados
-  const allPosts: Post[] = getAllFilesMetadata();
-  // La función getAllFilesMetadata no ordena los posts, así que lo hacemos aquí.
-  const posts = allPosts.sort((a, b) => 
-    compareDesc(new Date(a.date), new Date(b.date))
-  );
+  
+  // Llamamos a la nueva función asíncrona para obtener la metadata de todos los posts
+  const posts = await getAllPostsMetadata();
+
+  // NOTA: La función `getAllPostsMetadata` que creamos ya ordena los posts por
+  // fecha descendente, por lo que ya no necesitas ordenarlos aquí. ¡Código más limpio!
 
   return (
     <main>

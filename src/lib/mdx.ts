@@ -1,68 +1,44 @@
 // src/lib/mdx.ts
 import fs from 'fs';
 import path from 'path';
-import matter from "gray-matter";
-import { serialize } from 'next-mdx-remote/serialize';
 
-// Paso 1: Definir los tipos aquí también para que la librería sepa qué debe devolver
+// Definimos el tipo para la metadata que exportamos desde los archivos MDX
 export type PostMetadata = {
   title: string;
   date: string;
   summary: string;
-  [key: string]: string; // Permite otras propiedades en el frontmatter
-};
-
-export type Post = {
   slug: string;
-} & PostMetadata;
-
-
-const root = process.cwd();
-const postsDirectory = path.join(root, 'src/content/blog');
-
-export const getFiles = () => {
-    return fs.readdirSync(postsDirectory);
 };
 
-export const getFileBySlug = async (slug: string) => {
-    const mdxSource = fs.readFileSync(
-        path.join(postsDirectory, `${slug}.mdx`),
-        "utf-8"
-    );
-    console.log(`[debug:getFileBySlug] Intentando leer el archivo en la ruta: ${mdxSource}`);
+const postsDirectory = path.join(process.cwd(), 'src/content/blog');
 
-    const { data, content } = matter(mdxSource);
-    const source = await serialize(content, {});
+// Esta función ahora leerá el directorio y dinámicamente importará cada
+// archivo para extraer la constante `metadata` exportada.
+export async function getAllPostsMetadata(): Promise<PostMetadata[]> {
+  const files = fs.readdirSync(postsDirectory).filter(file => path.extname(file) === '.mdx');
 
-    return {
-        source,
-        frontmatter: {
-            slug,
-            ...data,
-        } as Post,
-    };
-};
+  const allPostsData = await Promise.all(
+    files.map(async (fileName) => {
+      const slug = fileName.replace(/\.mdx$/, '');
+      const { metadata } = await import(`../content/blog/${fileName}`);
+      
+      return {
+        slug,
+        ...metadata,
+      };
+    })
+  );
 
-// Paso 2: Añadir el tipo de retorno explícito a la función -> : Post[]
-// Esto fuerza a que la función devuelva el tipo correcto
-export const getAllFilesMetadata = (): Post[] => {
-    const files = getFiles();
+  // Ordenar posts por fecha si quieres
+  return allPostsData.sort((a, b) => (new Date(a.date) < new Date(b.date) ? 1 : -1));
+}
 
-    const allPosts = files.map((postSlug) => {
-        const cleanSlug = postSlug.replace('.mdx', '');
-        const mdxSource = fs.readFileSync(
-            path.join(postsDirectory, postSlug),
-            "utf-8"
-        );
-        
-        // 'data' contiene el frontmatter (title, date, summary)
-        const { data } = matter(mdxSource);
-
-        return {
-            ...data, // Aquí se añaden title, date, summary, etc.
-            slug: cleanSlug,
-        } as Post; // Le decimos a TypeScript que confíe en que este objeto es de tipo Post
-    });
-
-    return allPosts;
-};
+// Esta función es similar, pero para un solo post.
+// La usaremos para generar los metadatos de la página.
+export async function getPostMetadataBySlug(slug: string): Promise<PostMetadata> {
+  const { metadata } = await import(`../content/blog/${slug}.mdx`);
+  return {
+    slug,
+    ...metadata
+  };
+}
