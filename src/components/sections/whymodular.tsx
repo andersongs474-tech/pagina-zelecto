@@ -48,7 +48,7 @@ export default function WhyModular() {
             {benefits.map((benefit) => (
               <div key={benefit.title} className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <Icon name={benefit.iconName} className="text-blue-600 w-6 h-6 mt-1" />
+                  <Icon name={benefit.iconName} className="text-verde w-6 h-6 mt-1" />
                 </div>
                 <div>
                   <h3 className="font-semibold">{benefit.title}</h3>
@@ -64,30 +64,30 @@ export default function WhyModular() {
               <thead>
                 <tr>
                   <th className="p-3">Característica</th>
-                  <th className="p-3 bg-blue-50 text-blue-800 rounded-t-lg">Ecosistema Modular</th>
+                  <th className="p-3 bg-negro/30 text-verde rounded-t-lg">Ecosistema Modular</th>
                   <th className="p-3">Plan Fijo Tradicional</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-t">
                   <td className="p-3 font-medium">Asignación de recursos</td>
-                  <td className="p-3 bg-blue-50 text-blue-900">Dinámica (mensual)</td>
-                  <td className="p-3 text-slate-500">Estática (trimestral)</td>
+                  <td className="p-3 bg-negro/30 text-verde">Dinámica (mensual)</td>
+                  <td className="p-3 ">Estática (trimestral)</td>
                 </tr>
                 <tr className="border-t">
                   <td className="p-3 font-medium">Velocidad de testeo</td>
-                  <td className="p-3 bg-blue-50 text-blue-900">Alta</td>
-                  <td className="p-3 text-slate-500">Baja</td>
+                  <td className="p-3 bg-negro/30 text-verde">Alta</td>
+                  <td className="p-3">Baja</td>
                 </tr>
                 <tr className="border-t">
                   <td className="p-3 font-medium">Pago</td>
-                  <td className="p-3 bg-blue-50 text-blue-900">Por módulos activos</td>
-                  <td className="p-3 text-slate-500">Fee fijo completo</td>
+                  <td className="p-3 bg-negro/30 text-verde">Por módulos activos</td>
+                  <td className="p-3">Fee fijo completo</td>
                 </tr>
                 <tr className="border-t">
                   <td className="p-3 font-medium">Compromiso</td>
-                  <td className="p-3 bg-blue-50 text-blue-900 rounded-b-lg font-semibold">Mes a mes</td>
-                  <td className="p-3 text-slate-500">6-12 meses</td>
+                  <td className="p-3 bg-negro/30 text-verde rounded-b-lg font-semibold">Mes a mes</td>
+                  <td className="p-3">6-12 meses</td>
                 </tr>
               </tbody>
             </table>

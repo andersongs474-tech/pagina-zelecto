@@ -71,10 +71,10 @@ export default function Header() {
         shadow-xl backdrop-blur-none'
       >  */}
       <header 
-        className={`absolute top-0 z-50 w-full transition-all duration-300 ${
+        className={`fixed top-0 z-50 w-full transition-all duration-300 ${
           isScrolled
-          ?'bg:white'
-          :'shadow-xl backdrop-blur-none'
+          ?'bg-negro'
+          :'shadow-xl backdrop-blur-[3px]'
         }`}
       >
         {/* <header 
@@ -86,7 +86,7 @@ export default function Header() {
       >*/}
         <div className="container flex h-16 max-w-7xl items-center justify-between mx-auto px-4">
           {/* Logo */}
-          <Link href="/" className="text-white font-bold text-xl mr-4">
+          <Link href="/" className="text-white font-bold text-xl mr-4 pr-90">
             Ecosistema Modular
           </Link>
 

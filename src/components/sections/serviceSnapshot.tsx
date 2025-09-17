@@ -56,12 +56,12 @@ export default function ServicesSnapshot() {
             <Link 
               href={service.href} 
               key={service.title} 
-              className="group block bg-white p-6 rounded-lg border hover:border-blue-500 hover:shadow-lg transition-all duration-300"
+              className="group block bg-white p-6 rounded-lg border hover:border-verde hover:bg-negro hover:shadow-lg transition-all duration-300"
             >
-              <Icon name={service.iconName} className="text-blue-600 mb-4" size={32} />
-              <h3 className="text-lg font-semibold mb-2 group-hover:text-blue-600">{service.title}</h3>
-              <p className="text-slate-600 text-sm">{service.description}</p>
-              <div className="mt-4 font-semibold text-blue-600 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+              <Icon name={service.iconName} className="text-verde mb-4" size={32} />
+              <h3 className="text-lg font-semibold mb-2 group-hover:text-verde">{service.title}</h3>
+              <p className="text-slate-600 group-hover:text-white text-sm">{service.description}</p>
+              <div className="mt-4 font-semibold text-verde flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                 Ver más <Icon name="ArrowRight" size={16} />
               </div>
             </Link>

@@ -14,9 +14,9 @@ export default function HomePage() {
     // 1. Establecemos el contexto de apilamiento con 'relative'
     <main className="relative">
       
-      {/* 2. CAPA DE FONDO (z-0) - Video y Overlay */}
-      {/* Este div contendrá el video y la capa oscura, y se quedará en el fondo */}
-      <div className="absolute inset-0 z-0 h-screen"> {/* Ajusta la altura según necesites */}
+      
+      
+      <div className="absolute inset-0 z-0 h-screen"> 
         <video
           autoPlay
           loop
@@ -28,12 +28,12 @@ export default function HomePage() {
           <source src="/videoFondo.mp4" type="video/mp4" />
         </video>
         {/* Capa de superposición oscura */}
-        <div className="absolute inset-0 bg-black/50" />
+        {/* <div className="absolute inset-0 bg-black/50" /> */}
       </div>
 
       {/* 3. CAPA DE CONTENIDO (z-10) - Todo lo demás */}
       {/* Este div es 'relative' para que su 'z-index' funcione y ponga todo su contenido por encima del video */}
-      <div className="relative z-10">
+      <div className="relative z-10 pt-60 pb-60">
         {/* Hero Section */}
         <section className="text-center max-w-4xl mx-auto py-20 md:py-32 px-4">
           <div className="max-w-4xl mx-auto">
@@ -55,7 +55,7 @@ export default function HomePage() {
         </section>
 
         {/* Las siguientes secciones tendrán fondo blanco y taparán el video al hacer scroll */}
-        <div className="bg-background">
+        <div className="bg-transparent pt-38">
           <TrustBar /> 
           <HowItWorks />
           <WhyModular />

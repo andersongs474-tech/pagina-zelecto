@@ -3,21 +3,21 @@
 // Componente para una métrica individual
 const Metric = ({ value, label }: { value: string; label: string }) => (
   <div className="text-center">
-    <p className="text-3xl md:text-4xl font-bold text-blue-600">{value}</p>
-    <p className="text-sm text-slate-500 uppercase tracking-wider">{label}</p>
+    <p className="text-3xl md:text-4xl font-bold text-verde">{value}</p>
+    <p className="text-sm text-white uppercase tracking-wider">{label}</p>
   </div>
 );
 
 // Componente para un logo placeholder
 const LogoPlaceholder = ({ name }: { name: string }) => (
-  <div className="flex items-center justify-center h-12 text-slate-400 font-medium">
+  <div className="flex items-center justify-center h-12 text-white font-medium">
     {name}
   </div>
 );
 
 export default function TrustBar() {
   return (
-    <section className="bg-slate-100 py-12">
+    <section className="bg-negro py-12">
       <div className="container max-w-7xl mx-auto px-4">
         <h3 className="text-center text-sm font-semibold text-slate-600 tracking-wider mb-8">
           CONFIAN EN NUESTRO ECOSISTEMA
